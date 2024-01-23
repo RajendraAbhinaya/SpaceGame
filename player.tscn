@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0jpgxusyrpvi"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_a7n5o"]
+
+[node name="Player" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 0.4
+angular_damp = 0.4
+script = ExtResource("1_a7n5o")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-47.9, 0)
+rotation = 1.5708
+polygon = PackedVector2Array(-35, -2, 0, -88, 39, -1, 0, -26)
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-47.9, 0)
+rotation = 1.5708
+polygon = PackedVector2Array(-35, -2, 0, -88, 39, -1, 0, -26)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+position_smoothing_speed = 100.0
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+one_shot = true

@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bpric7i60gvmf"]
+[gd_scene load_steps=3 format=3 uid="uid://bpric7i60gvmf"]
+
+[ext_resource type="PackedScene" uid="uid://b0jpgxusyrpvi" path="res://player.tscn" id="1_e1onr"]
+[ext_resource type="Texture2D" uid="uid://tltefxpttx4s" path="res://Nebula.jpg" id="2_gr88g"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e1onr")]
+position = Vector2(4, -3)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1024, 1024)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576, 324)
+texture = ExtResource("2_gr88g")
